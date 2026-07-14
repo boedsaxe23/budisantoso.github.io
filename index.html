@@ -3,161 +3,360 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio | BUDI SANTOSO</title>
+  <title>Portofolio | Cybersecurity & Data Analytics</title>
+  
+  <!-- Font Google Tema Tech/Cyber -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    /* CYBER SECURITY & DATA ANALYST */
+    /* VARIABLES & RESET */
     :root {
-      --bg-dark: #0f172a;
-      --card-bg: #1e293b;
+      --bg-dark: #080d1a;
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --cyan-glow: #00f2fe;
+      --blue-accent: #3b82f6;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: #334155;
+      --border-cyber: rgba(0, 242, 254, 0.25);
+      --box-glow: 0 0 25px rgba(0, 242, 254, 0.2);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-main);
       line-height: 1.6;
       padding: 0 1.5rem;
+      min-height: 100vh;
+      /* Background Grid Cyberpunk */
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.12) 0%, transparent 65%),
+        linear-gradient(rgba(0, 242, 254, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 45px 45px, 45px 45px;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       padding: 4rem 0;
     }
 
-    section { margin-bottom: 4rem; }
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-cyber);
+      padding: 2.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--box-glow);
+    }
 
-    /* HEADER / HERO */
-    .hero { margin-bottom: 4rem; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero .role { font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
-    .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 650px; }
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
 
-    /* JUDUL SEKSI */
+    .hero-text {
+      flex: 1;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: var(--cyan-glow);
+      background: rgba(0, 242, 254, 0.08);
+      border: 1px solid var(--border-cyber);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--cyan-glow);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--cyan-glow);
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .role {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.05rem;
+      color: var(--cyan-glow);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 2rem;
+    }
+
+    /* FOTO PROFIL CYBER */
+    .hero-avatar {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      flex-shrink: 0;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--cyan-glow);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    }
+
+    /* Ring Animasi Berputar di Luar Foto */
+    .avatar-ring {
+      position: absolute;
+      top: -8px; left: -8px; right: -8px; bottom: -8px;
+      border-radius: 50%;
+      border: 2px dashed var(--cyan-glow);
+      animation: spin 25s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* SEKSI & JUDUL */
     .section-title {
-      font-size: 1.4rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 1.25rem;
+      color: var(--cyan-glow);
       margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-cyber);
     }
 
     /* SKILLS */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 4rem;
     }
 
-    /* PROJECTS */
+    .tag {
+      font-family: 'Fira Code', monospace;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-cyber);
+      color: var(--text-main);
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      border-color: var(--cyan-glow);
+      box-shadow: var(--box-glow);
+      transform: translateY(-2px);
+    }
+
+    /* CARDS PROJEK */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
+      margin-bottom: 4rem;
     }
 
     .project-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-cyber);
+      border-radius: 10px;
       padding: 1.5rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
     .project-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
+      transform: translateY(-4px);
+      border-color: var(--cyan-glow);
+      box-shadow: var(--box-glow);
     }
 
-    .project-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
-    .project-card a { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .project-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: #fff;
+    }
 
-    /* TOMBOL KONTAK */
-    .btn-group { display: flex; gap: 1rem; margin-top: 1.5rem; }
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: var(--bg-dark);
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-card a {
+      font-family: 'Fira Code', monospace;
+      color: var(--cyan-glow);
       text-decoration: none;
+      font-size: 0.85rem;
       font-weight: 600;
     }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* TOMBOL */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--cyan-glow), var(--blue-accent));
+      color: var(--bg-dark);
+      padding: 0.65rem 1.3rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover { opacity: 0.9; }
+
     .btn-outline {
       background: transparent;
       color: var(--text-main);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-cyber);
     }
 
-    footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 4rem; }
+    .btn-outline:hover {
+      border-color: var(--cyan-glow);
+      color: var(--cyan-glow);
+    }
+
+    footer {
+      text-align: center;
+      font-family: 'Fira Code', monospace;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-cyber);
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
     
+    <!-- HERO SECTION -->
     <header class="hero">
-      <h1>[Budi Santoso]</h1>
-      <div class="role">[Cybersecurity & Data Analyst]</div>
-      <p>
-        Halo! Saya seorang profesional yang berfokus pada analisis data, tata kelola keamanan siber, dan pengembangan sistem.
-      </p>
-      <div class="btn-group">
-        <a href="mailto: boeds23@gmail.com" class="btn">Hubungi Saya</a>
-        <a href="https://github.com/username" target="_blank" class="btn btn-outline">GitHub Profil</a>
+      <div class="hero-text">
+        <div class="status-badge">
+          <span class="status-dot"></span> SYSTEM_STATUS: SECURE
+        </div>
+        <h1>Budi Santoso</h1>
+        <div class="role">&gt; Cybersecurity & Data Analytics Specialist</div>
+        <p>
+          Combining business management acumen with cybersecurity and data analytics expertise, I drive public sector digital resilience by securing critical infrastructure, establishing risk frameworks, and using data-driven insights to optimize governance and threat response.
+        </p>
+        <div class="btn-group">
+          <a href="mailto:emailanda@example.com" class="btn">Hubungi Saya</a>
+          <!-- Ganti link di bawah sesuai nama file CV PDF Anda -->
+          <a href="./CV_Budi_Santoso.pdf" target="_blank" class="btn btn-outline">📄 Download CV (PDF)</a>
+        </div>
+      </div>
+
+      <!-- FOTO PROFIL -->
+      <div class="hero-avatar">
+        <div class="avatar-ring"></div>
+        <!-- Ganti 'profile.jpg' dengan nama file foto diri Anda yang diupload ke GitHub -->
+        <img src="profile.jpg" alt="Foto Diri" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Budi+Santoso&background=0D8ABC&color=fff&size=170'">
       </div>
     </header>
 
+    <!-- SKILLS -->
     <section>
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">01. TECHNICAL_CAPABILITIES</h2>
       <div class="skills-grid">
+        <span class="tag">Cybersecurity Governance</span>
+        <span class="tag">CSIRT Operations</span>
+        <span class="tag">Risk Management Framework</span>
         <span class="tag">Python (Pandas / Seaborn)</span>
-        <span class="tag">Excel</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Tableau / Visualisasi Data</span>
-        <span class="tag">Cybersecurity Operations</span>
-        <span class="tag">CSIRT Framework</span>
-        <span class="tag">Git & GitHub</span>
+        <span class="tag">SQL & PostgreSQL</span>
+        <span class="tag">Tableau Analytics</span>
+        <span class="tag">Excel Data Modeling</span>
       </div>
     </section>
 
+    <!-- PROJEK -->
     <section>
-      <h2 class="section-title">Project</h2>
+      <h2 class="section-title">02. FEATURED_PROJECTS</h2>
       <div class="project-grid">
 
         <div class="project-card">
-          <h3>Prediksi Churn Pelanggan</h3>
-          <p>Model Machine Learning berbasis Python untuk mengidentifikasi tingkat retensi dan faktor risiko churn pada layanan langganan.</p>
-          <a href="#" target="_blank">Lihat Repositori &rarr;</a>
+          <h3>National Digital Signature Deployment</h3>
+          <p>Memimpin implementasi sertifikat digital nasional di BP Batam untuk mengamankan dan memodernisasi alur kerja administrasi publik.</p>
+          <a href="https://github.com/YOUR-USERNAME" target="_blank">&gt; View Documentation &rarr;</a>
         </div>
 
         <div class="project-card">
-          <h3>Perancangan SOP CSIRT</h3>
-          <p>Penyusunan standar operasional prosedur penanganan insiden siber dan struktur kompetensi SDM sesuai standar nasional.</p>
-          <a href="#" target="_blank">Lihat Dokumen &rarr;</a>
+          <h3>Government Risk Management Strategy</h3>
+          <p>Mengembangkan strategi manajemen risiko institusi di BSSN melalui audit aset, analisis kerentanan, dan baseline kepatuhan.</p>
+          <a href="https://github.com/YOUR-USERNAME" target="_blank">&gt; View Strategy &rarr;</a>
         </div>
 
         <div class="project-card">
-          <h3>Dashboard Penjualan Interaktif</h3>
-          <p>Visualisasi data transaksi menggunakan Tableau untuk analisis segmentasi pelanggan (RFM Analysis).</p>
-          <a href="#" target="_blank">Lihat Dashboard &rarr;</a>
+          <h3>Threat Pattern & Customer Analytics</h3>
+          <p>Pengolahan dataset menggunakan Python & SQL untuk mengidentifikasi pola ancaman siber dan optimasi retensi operasional berbasis data.</p>
+          <a href="https://github.com/YOUR-USERNAME" target="_blank">&gt; View Analytics &rarr;</a>
         </div>
 
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-      <p>&copy; 2026 [boeds23]. Dibuat dengan GitHub Pages.</p>
+      <p>&copy; 2026 Budi Santoso. Built with HTML/CSS & Hosted on GitHub Pages.</p>
     </footer>
 
   </div>
