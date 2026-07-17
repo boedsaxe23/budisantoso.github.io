@@ -53,7 +53,7 @@
     /* HERO SECTION */
     .hero {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column-reverse; /* Default untuk HP: foto di atas teks */
       align-items: center;
       gap: 2.5rem;
       margin-bottom: 4rem;
@@ -67,7 +67,7 @@
 
     @media (min-width: 768px) {
       .hero {
-        flex-direction: row;
+        flex-direction: row; /* Desktop: teks di kiri, foto di kanan */
         justify-content: space-between;
       }
     }
@@ -118,7 +118,7 @@
       margin-bottom: 2rem;
     }
 
-    /* FOTO PROFIL CYBER (UKURAN DIPERLUAS & TANPA ANIMASI LINGKARAN) */
+    /* FOTO PROFIL CYBER */
     .hero-avatar {
       position: relative;
       width: 220px;
@@ -225,7 +225,7 @@
       text-decoration: underline;
     }
 
-    /* TOMBOL */
+    /* TOMBOL CV & INTERAKSI */
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -235,28 +235,57 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(135deg, var(--cyan-glow), var(--blue-accent));
-      color: var(--bg-dark);
-      padding: 0.65rem 1.3rem;
+      gap: 0.6rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 700;
       font-size: 0.9rem;
-      transition: opacity 0.2s ease;
+      font-family: 'Fira Code', monospace;
+      transition: all 0.3s ease;
     }
-
-    .btn:hover { opacity: 0.9; }
 
     .btn-outline {
       background: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--border-cyber);
+      color: var(--cyan-glow);
+      border: 1px solid var(--cyan-glow);
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
     }
 
     .btn-outline:hover {
+      background: rgba(0, 242, 254, 0.1);
       border-color: var(--cyan-glow);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+      transform: translateY(-2px);
+      cursor: pointer;
+    }
+
+    /* CONTACT SECTION */
+    .contact-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-cyber);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .contact-info {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      font-size: 0.95rem;
+    }
+
+    .contact-item a {
       color: var(--cyan-glow);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -276,6 +305,7 @@
     
     <!-- HERO SECTION -->
     <header class="hero">
+      <!-- Sisi Kiri: Teks & Tombol -->
       <div class="hero-text">
         <div class="status-badge">
           <span class="status-dot"></span> SYSTEM_STATUS: SECURE
@@ -286,12 +316,14 @@
           Combining business management acumen with cybersecurity and data analytics expertise, I drive public sector digital resilience by securing critical infrastructure, establishing risk frameworks, and using data-driven insights to optimize governance and threat response.
         </p>
         <div class="btn-group">
-         <!-- <a href="mailto:emailanda@example.com" class="btn">Hubungi Saya</a>
-          <a href="./CV BUDI-SANTOSO.pdf" target="_blank" class="btn btn-outline">📄 Download CV (PDF)</a>
+          <!-- Tombol Buka CV -->
+          <a href="./CV BUDI-SANTOSO.pdf" target="_blank" class="btn btn-outline">
+            📄 Open Curriculum Vitae
+          </a>
         </div>
       </div>
 
-      <!-- FOTO PROFIL (UKURAN DIPERBESAR - TANPA RING ANIMASI) -->
+      <!-- Sisi Kanan: Foto Profil -->
       <div class="hero-avatar">
         <img src="budis.png" alt="Foto Diri" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Budi+Santoso&background=0D8ABC&color=fff&size=220'">
       </div>
@@ -310,7 +342,7 @@
       </div>
     </section>
 
-    <!-- PROJEK (LINK DIUBAH KE FORMAT VIEW ONLY PDF) -->
+    <!-- PROJEK -->
     <section>
       <h2 class="section-title">02. FEATURED_PROJECTS</h2>
       <div class="project-grid">
@@ -318,20 +350,19 @@
         <div class="project-card">
           <h3>Government Risk Management Strategy</h3>
           <p>Developing institutional risk management strategies through asset audits, vulnerability analysis, and compliance baselines.</p>
-          <!-- Ganti href dengan link Google Drive / Cloud PDF view-only kamu -->
           <a href="https://drive.google.com/file/d/1E5EHZAaKDBxQ2mNZ9k9XaXkhBfNgACt/view?usp=sharing" target="_blank">&gt; View Strategy (PDF) &rarr;</a>
         </div>
 
         <div class="project-card">
           <h3>RevoNet Customer Churn Analysis</h3>
           <p>Analyzed data from 72,274 customers to reduce the churn rate by 10%. Developed a Random Forest predictive model with 93.88% accuracy and a Tableau visualization dashboard.</p>
-          <!-- Ganti href dengan link Google Drive / Cloud PDF view-only kamu -->
           <a href="https://drive.google.com/file/d/1E5EHZAaKDBxQ2mNZ9k9XaXkhBfNgACtJ/view?usp=drive_link" target="_blank">&gt; View Analysis (PDF) &rarr;</a>
         </div>
 
       </div>
     </section>
-<!-- TAMBAHAN BARU: CONTACT SECTION -->
+
+    <!-- CONTACT SECTION -->
     <section>
       <h2 class="section-title">03. GET_IN_TOUCH</h2>
       <div class="contact-container">
@@ -353,14 +384,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2026 Budi Santoso. Built with HTML/CSS & Hosted on GitHub Pages.</p>
-    </footer>
-
-  </div>
-
-</body>
     <!-- FOOTER -->
     <footer>
       <p>&copy; 2026 Budi Santoso. Built with HTML/CSS & Hosted on GitHub Pages.</p>
