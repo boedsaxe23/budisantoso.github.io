@@ -118,11 +118,11 @@
       margin-bottom: 2rem;
     }
 
-    /* FOTO PROFIL CYBER */
+    /* FOTO PROFIL CYBER (UKURAN DIPERLUAS & TANPA ANIMASI LINGKARAN) */
     .hero-avatar {
       position: relative;
-      width: 170px;
-      height: 170px;
+      width: 220px;
+      height: 220px;
       flex-shrink: 0;
     }
 
@@ -133,20 +133,6 @@
       border-radius: 50%;
       border: 2px solid var(--cyan-glow);
       box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-    }
-
-    /* Ring Animasi Berputar di Luar Foto */
-    .avatar-ring {
-      position: absolute;
-      top: -8px; left: -8px; right: -8px; bottom: -8px;
-      border-radius: 50%;
-      border: 2px dashed var(--cyan-glow);
-      animation: spin 25s linear infinite;
-      opacity: 0.6;
-    }
-
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
     }
 
     /* SEKSI & JUDUL */
@@ -301,16 +287,13 @@
         </p>
         <div class="btn-group">
           <a href="mailto:emailanda@example.com" class="btn">Hubungi Saya</a>
-          <!-- Ganti link di bawah sesuai nama file CV PDF Anda -->
           <a href="./CV BUDI-SANTOSO.pdf" target="_blank" class="btn btn-outline">📄 Download CV (PDF)</a>
         </div>
       </div>
 
-      <!-- FOTO PROFIL -->
+      <!-- FOTO PROFIL (UKURAN DIPERBESAR - TANPA RING ANIMASI) -->
       <div class="hero-avatar">
-        <div class="avatar-ring"></div>
-        <!-- Ganti 'profile.jpg' dengan nama file foto diri Anda yang diupload ke GitHub -->
-        <img src="budis.png" alt="Foto Diri" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Budi+Santoso&background=0D8ABC&color=fff&size=170'">
+        <img src="budis.png" alt="Foto Diri" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Budi+Santoso&background=0D8ABC&color=fff&size=220'">
       </div>
     </header>
 
@@ -327,7 +310,7 @@
       </div>
     </section>
 
-    <!-- PROJEK -->
+    <!-- PROJEK (LINK DIUBAH KE FORMAT VIEW ONLY PDF) -->
     <section>
       <h2 class="section-title">02. FEATURED_PROJECTS</h2>
       <div class="project-grid">
@@ -335,19 +318,22 @@
         <div class="project-card">
           <h3>National Digital Signature Deployment</h3>
           <p>Memimpin implementasi sertifikat digital nasional di BP Batam untuk mengamankan dan memodernisasi alur kerja administrasi publik.</p>
-          <a href="https://github.com/YOUR-USERNAME" target="_blank">&gt; View Documentation &rarr;</a>
+          <!-- Ganti href dengan link Google Drive / Cloud PDF view-only kamu -->
+          <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" target="_blank">&gt; View Document (PDF) &rarr;</a>
         </div>
 
         <div class="project-card">
           <h3>Government Risk Management Strategy</h3>
           <p>Mengembangkan strategi manajemen risiko institusi di BSSN melalui audit aset, analisis kerentanan, dan baseline kepatuhan.</p>
-          <a href="https://github.com/YOUR-USERNAME" target="_blank">&gt; View Strategy &rarr;</a>
+          <!-- Ganti href dengan link Google Drive / Cloud PDF view-only kamu -->
+          <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" target="_blank">&gt; View Strategy (PDF) &rarr;</a>
         </div>
 
         <div class="project-card">
-          <h3>Threat Pattern & Customer Analytics</h3>
-          <p>Pengolahan dataset menggunakan Python & SQL untuk mengidentifikasi pola ancaman siber dan optimasi retensi operasional berbasis data.</p>
-          <a href="https://github.com/YOUR-USERNAME" target="_blank">&gt; View Analytics &rarr;</a>
+          <h3>RevoNet Customer Churn Analysis</h3>
+          <p>Menganalisis data 72.274 pelanggan untuk menekan churn rate sebesar 10%[cite: 2]. Membangun model prediktif Random Forest berakurasi 93.88% dan dashboard visualisasi Tableau[cite: 2].</p>
+          <!-- Ganti href dengan link Google Drive / Cloud PDF view-only kamu -->
+          <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" target="_blank">&gt; View Analysis (PDF) &rarr;</a>
         </div>
 
       </div>
